@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="YGBM">
+<head>
+    <meta charset="UTF-8">
+    <title>You Gotta Believe Me</title>
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.min.css"/>
+    <link href='https://fonts.googleapis.com/css?family=Rock+Salt' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="styles.css"/>
+
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.1/angular.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.1/angular-sanitize.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+
+</head>
+<body ng-controller="MainCtrl">
+    <h1>You Gotta Believe Me</h1>
+    <div class="col-md-12 card-holder">
+        <div class="card row" ng-show="video">
+            <h3 ng-bind="video.date | date : 'EEEE, MMMM d, yyyy'"></h3>
+            <iframe class="video" ng-src="{{video.url}}" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div ng-show="!video">
+            <h2 class="text-center" style="font-style: italic;">Loading...</h2>
+            <br/>
+        </div>
+    </div>
+    <div class="col-lg-12">
+        <h2 class="text-center">
+            <a href="#" ng-click="prev()" ng-show="hasPrev">Prev</a>
+            <span class="gray" ng-hide="hasPrev">Prev</span>
+            |
+            <a href="#" ng-click="next()" ng-show="hasNext">Next</a>
+            <span class="gray" ng-hide="hasNext">Next</span>
+        </h2>
+    </div>
+    <div class="feedback">
+        <p class="text-center"><a href="mailto:info@huttj.com?subject=YGBM Feedback">Feedback?</a></p>
+    </div>
+</body>
+</html>
