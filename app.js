@@ -1,4 +1,4 @@
-angular.module('YGBM', ['ngRoute', 'ngSanitize'])
+angular.module('YGBM', ['ngSanitize'])
 
     .factory('DataSvc', function($http, $sce) {
         return {
