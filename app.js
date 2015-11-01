@@ -34,18 +34,18 @@ angular.module('YGBM', ['ngSanitize'])
             updatePrevNext();
         });
 
-        $scope.next = function() {
+        $scope.prev = function() {
             if (videos[i+1]) $scope.video = videos[++i];
             updatePrevNext();
         };
 
-        $scope.prev = function() {
+        $scope.next = function() {
             if (i > 0) $scope.video = videos[--i];
             updatePrevNext();
         };
 
         function updatePrevNext() {
-            $scope.hasNext = i < videos.length - 1;
-            $scope.hasPrev = i > 0;
+            $scope.hasPrev = i < videos.length - 1;
+            $scope.hasNext = i > 0;
         }
     });
