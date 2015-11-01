@@ -2,7 +2,7 @@ angular.module('YGBM', ['ngSanitize'])
 
     .factory('DataSvc', function($http, $sce) {
         return {
-            videos: $http.get('/videos.json').then(getData)
+            videos: $http.get('videos.json').then(getData)
         };
 
         function getData(res) {
